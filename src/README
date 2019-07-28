@@ -1,0 +1,20 @@
+This directory contains code for testing both the API and UI.
+
+Create a local repository in your work space by creating a clone as 'git clone https://github.com/mpdass/filestest.git'.
+This will download all the files from this git repository into your workspace under the directory 'filestests'.
+Explore this directory by navigating to each directory to get familiarize yourself.
+
+The API test code is written in python using 'requests' package and is in the directory 'src/pythoncode'.
+The UI test codes is written in Java using 'selenium' framework and is in the directory 'src/javacode'.
+
+The 'build.xml' file in the 'src' directory is based off of 'ant' tasks. Either you can run the java application using the 'uitestcases.jar'
+in 'src/lib' directory or creating a jar file by compiling the source code as 'ant package' from the source directory. This assumes that 
+your environment has necessary JDK and ant package installed.  Once, this is done without any errors, it creates a 'src/lib/uitestcases.jar'
+file.
+
+Take a look at the 'envvars' file and if needed make necessary adjustments to your environment.
+
+The java application can be run by running 'run_ui_test.sh and the python application can be run using 'run_api_test.sh' script.
+
+Development is underway to implement a complete pipeline from cloning to running the test using 'Jenkins' and will be uploaded once that
+is completed.
