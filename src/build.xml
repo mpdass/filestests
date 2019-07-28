@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="UI Test Cases Using Selenium" default="package" basedir=".">
+    <echo message="${basedir}"/>
+    <property name="work.dir" value="${basedir}"/>
+    <!-- For IDE use, uncomment this line and comment the 2nd line below -->
+    <!-- property name="libs.basedir" value="C:\\selenium-java-3.141.59"/ -->
+    <!-- For command line use, comment above line and uncomment the next line -->
+    <property name="libs.basedir" value="/mnt/c/selenium-java-3.141.59"/>
+    <property name="source.dir" value="javacode"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="jar.name" value="uitestcases.jar"/>
+    <property name="jar.dir" value="lib"/>
+
+    <path id="libs">
+        <fileset dir="${libs.basedir}/" includes="client-combined-3.141.59.jar"/>
+        <fileset dir="${libs.basedir}/libs" includes="*.jar"/>
+    </path>
+
+    <target name="init" description="initialize directory for compilation">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${jar.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+	<javac destdir="${build.dir}" classpathref="libs" includeantruntime="false" fork="true">
+            <src path="${source.dir}"/>
+            <compilerarg value="-J-Duser.country=CA"/>
+            <compilerarg value="-J-Duser.language=en"/>
+        </javac>
+    </target>
+
+    <target name="package" depends="compile">
+        <jar jarfile="${jar.dir}/${jar.name}" basedir="${build.dir}"/>
+    </target>
+
+    <target name="clean" description="Cleanup temporary folders for build">
+        <delete dir="${build.dir}"/>
+        <delete dir="${jar.dir}"/>
+    </target>
+</project>

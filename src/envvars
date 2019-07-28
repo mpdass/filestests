@@ -1,0 +1,7 @@
+#/bin/bash
+export BROWSER=chrome
+export CHROMEDRIVER_EXE=/mnt/c/selenium-java-3.141.59/chromedriver/chromedriver.exe
+export LOGIN_USER=mpdass@hotmail.com
+export LOGIN_PASSWD=JunkYard1
+export ENDPOINT=https://platform.rescale.com/
+export API_KEY=70a03a6cca53fc81ca32632949ac146e3d66f8ec

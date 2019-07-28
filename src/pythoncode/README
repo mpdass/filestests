@@ -1,0 +1,13 @@
+This code is written to run with python version 3.0 or greater.
+This is run with Python 3.6.8 and the executable is available in '/usr/bin/python3'.
+The application is run from 'pythoncode/api_app' directory as:
+    /usr/bin/python3 filesapi.py /mnt/c/PracticeProjects/files-tests/src/errorinstallingubuntu.txt
+        where '/usr/bin/python3' is the python interpreter,
+              'filesapi.py' is the application that is run
+          and '/mnt/c/PracticeProjects/files-tests/src/errorinstallingubuntu.txt' is the file to be uploaded with the full path name.
+The application uses the class defined in the file "files/files_api.py". The class has initialization function that initializes:
+    - the endpoint to connect to, and
+    - the api key to use for the RestAPI calls.
+These are initialized via the data file "files/data/test_data.py". This data file relies on two environment variables: i.e., ENDPOINT, and API_KEY.These two environment variables need to be set and exported as a first step in an OS depended script.
+
+This setup uses a file 'envvars' in "pythoncode" directory.
